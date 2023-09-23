@@ -1,0 +1,339 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-size: 16px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End CSS Reset */
+:root {
+    --primary: #5246FF;
+	--secondary: #FF8675;
+	--grey-30: #ccc; 
+	--grey-50: #979797;
+}
+* {
+    font-family: 'Inter', sans-serif;
+	font-weight: 400;
+}
+h1 {
+	font-size: 3rem;
+	font-weight: 800;
+	margin-bottom: .3em;
+}
+h2 {
+	font-size: 1.3rem;
+}
+.font-cursive {
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 300;
+	font-style: italic;
+}
+.text-secondary {
+	color: var(--secondary);
+}
+#container {
+	margin: 30px;
+}
+#app {
+	color: white;
+	padding: 40px;
+    background-color: var(--primary);
+    border-radius: 12px;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+#copyright {
+	color: var(--grey-30);
+	margin: 2rem 0;
+}
+#copyright a {
+	color: var(--grey-30);
+	text-decoration: none;
+}
+#copyright a:hover {
+	color: var(--grey-50);
+	text-decoration: none;
+}
+.benefit {
+	margin: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.benefit__text {
+	line-height: 1.2;
+	font-size: 1rem;
+}
+#shortener {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    gap: 1rem;
+	margin: 2rem 0;
+}
+.shortener-input {
+	background-color: transparent;
+    border-bottom: 2px solid white;
+    outline: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+	height: 3rem;
+	margin: 0;
+    padding: 0 0 0 2rem;
+	width: 100%;
+	color: white;
+	font-size: 1.1rem;
+}
+.shortener__input-wrapper {
+	position: relative;
+	display: flex;
+}
+.shortener__input-wrapper::before {
+	content: '\f0c1';
+    font-family: 'Font Awesome 6 Free';
+	position: absolute;
+    font-weight: 600;
+    left: 0;
+    bottom: 1rem;
+	color: var(--secondary);
+}
+::placeholder {
+	color: white;
+}
+::-webkit-input-placeholder {
+	color: white;
+}
+::-moz-placeholder {
+	color: white;
+}
+:-ms-input-placeholder {
+	color: white;
+}
+button {
+	height: 3rem;
+	border: 0;
+	outline: 0;
+	border-radius: 6px;
+	padding: 0 1.2rem;
+	font-weight: 700;
+	font-size: 1.1rem;
+	cursor: pointer;
+	position: relative;
+}
+.button-secondary {
+	color: white;
+	background-color: var(--secondary);
+}
+.button-secondary:hover {
+	outline: 4px solid #8669e8;
+}
+.button-primary {
+	color: white;
+	background-color: var(--primary);
+}
+.button-primary:hover {
+	outline: 4px solid #cbc8ff;
+}
+.button__qr {
+	background: none;
+	padding: 0;
+    height: 24px;
+	color: var(--secondary);
+}
+.button__remove {
+	color: #9e99e3;
+	background-color: #f0efff;
+}
+.button__remove:hover {
+	color: var(--secondary);
+}
+#result {
+	background-color: white;
+	width: 100%;
+	max-width: 34rem;
+	border-radius: 6px;
+	padding: .6rem;
+	position: relative;
+}
+.result-link,
+.result-link a {
+	color: var(--primary);
+	font-size: 1.1rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.result__buttons {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+#shortener__form,
+#shortener__results {
+	display: contents;
+}
+#qr_code {
+    display: none;
+}
+#alert {
+    position: absolute;
+	bottom: calc(100% + 4rem);
+	left: 0;
+	right: 0;
+    background-color: #4d43d7;
+    padding: 0.7rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 300;
+    font-size: 1rem;
+	display: none;
+	color: #cdc9ff;
+}
+#alert::after {
+	content: "";
+  	position: absolute;
+  	top: 100%;
+  	left: 50%;
+  	margin-left: -5px;
+  	border-width: 5px;
+  	border-style: solid;
+  	border-color: #4d43d7 transparent transparent transparent;
+}
+.alert-active {
+	display: block !important;
+}
+@media (max-width:425px) {
+	.button__qr {
+		display: none;
+	}
+}
+@media (max-width: 768px) {
+	#copyright p {
+		margin-bottom: 1rem;
+	}
+	.result__buttons {
+		justify-content: center;
+		margin-top: .6rem;
+	}
+	.result-link {
+		background-color: #efefef;
+		padding: 1rem;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+}
+@media (min-width: 768px) {
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 1.75rem;
+	}
+	#container {
+		margin: 60px;
+	}
+	#app {
+		min-height: 500px;
+		padding: 90px;
+	}
+	#benefits {
+		display: flex;
+		gap: 2rem;
+		justify-content: space-between;
+		max-width: 800px;
+    	margin: 0 auto;
+	}
+	.benefit {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+    	gap: 1rem;
+		width: 33%;
+	}
+	.benefit__text {
+		text-align: left;
+	}
+	#copyright {
+		display: flex;
+		justify-content: space-between;
+	}
+	#shortener {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		flex-direction: row;
+		gap: 1rem;
+		max-width: 35rem;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.shortener__input-wrapper {
+		width: 70%;
+	}
+	.shortener-input {
+		flex-grow: 1;
+	}
+	.button__shortener {
+		width: 30%;
+	}
+	#result {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.result-link {
+		margin-left: 1rem;
+	}
+	#alert {
+		bottom: calc(100% + .8rem);
+	}
+}
+@media (min-width:1030px) {
+	#app {
+		background: url(./app-background.png);
+		background-size: cover;
+		background-position: center;
+	}
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Got long links? 🔗 | Link Shortener</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <main>
+        <div id="container">
+            <div id="app">
+                <div id="header">
+                    <h1>Got <span class="font-cursive text-secondary">loooong</span> links?</h1>
+                    <h2>We've got you covered!</h2>
+                </div>
+
+                <form id="shortener__form">
+                <div id="shortener">
+                        <div class="shortener__input-wrapper">
+                            <input id="shortener__input" class="shortener-input" type="url" placeholder="" value="">
+                        </div>
+                        <button id="shortener__submit" class="button__shortener button button-secondary" type="submit">Shorten URL
+                            <div id="alert"></div>
+                        </button>
+                </div>
+                </form>
+
+                <div id="shortener__results"></div>
+
+                <div id="benefits">
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                                <path opacity="0.5" d="M18.75 13.125H3.75M15 22.5H3.75M18.75 31.875H3.75" stroke="white" stroke-width="3.125" stroke-linecap="round"/>
+                                <path d="M31.875 31.875C37.0527 31.875 41.25 27.6777 41.25 22.5C41.25 17.3223 37.0527 13.125 31.875 13.125C26.6973 13.125 22.5 17.3223 22.5 22.5C22.5 27.6777 26.6973 31.875 31.875 31.875Z" stroke="white" stroke-width="3.125"/>
+                                <path d="M31.875 18.75V22.2112L33.75 24.375" stroke="white" stroke-width="3.125" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="benefit__text">Fast, simple and very reliable</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                                <path opacity="0.5" d="M22.5 3.75V7.5M22.5 37.5V41.25M3.75 22.5H7.5M37.5 22.5H41.25" stroke="white" stroke-width="3.125" stroke-linecap="round"/>
+                                <path d="M11.25 33.75L11.8931 33.1069M33.1069 11.8931L33.75 11.25M33.75 33.75L33.1069 33.1069M11.8931 11.8931L11.25 11.25" stroke="white" stroke-width="3.125" stroke-linecap="round"/>
+                                <path d="M22.5 18.5625L21.4781 19.53C21.6096 19.669 21.768 19.7798 21.9437 19.8554C22.1194 19.9311 22.3087 19.9702 22.5 19.9702C22.6913 19.9702 22.8806 19.9311 23.0563 19.8554C23.232 19.7798 23.3904 19.669 23.5219 19.53L22.5 18.5625ZM21.1012 27.69C19.9144 26.7394 18.765 25.9181 17.8425 24.8625C16.9687 23.8631 16.4062 22.7569 16.4062 21.3356H13.5938C13.5938 23.6194 14.5387 25.3556 15.7237 26.7131C16.8619 28.0144 18.3206 29.0662 19.3425 29.8837L21.1012 27.69ZM16.4062 21.3356C16.4062 19.9969 17.1506 18.9281 18.0769 18.4969C18.9094 18.1106 20.1487 18.1237 21.4781 19.5281L23.5219 17.5969C21.4763 15.435 18.9656 14.9831 16.8919 15.9469C14.9119 16.8656 13.5938 18.9675 13.5938 21.3356H16.4062ZM19.3425 29.8837C19.7175 30.1837 20.175 30.5512 20.655 30.8362C21.1294 31.1175 21.7612 31.4044 22.5 31.4044V28.5919C22.4869 28.5919 22.3706 28.5844 22.0894 28.4175C21.7444 28.1969 21.4143 27.9539 21.1012 27.69L19.3425 29.8837ZM25.6575 29.8837C26.6794 29.0662 28.1381 28.0144 29.2763 26.7131C30.4613 25.3575 31.4062 23.6194 31.4062 21.3356H28.5938C28.5938 22.7569 28.0312 23.8631 27.1575 24.8625C26.235 25.9181 25.0856 26.7375 23.8988 27.69L25.6575 29.8837ZM31.4062 21.3356C31.4062 18.9694 30.0881 16.8656 28.1081 15.9469C26.0344 14.9831 23.5237 15.435 21.4781 17.5969L23.5219 19.5281C24.8512 18.1237 26.0906 18.1106 26.9231 18.4969C27.8494 18.9281 28.5938 19.995 28.5938 21.3356H31.4062ZM23.8988 27.69C23.4975 28.0125 23.19 28.2525 22.9106 28.4175C22.6294 28.5844 22.5131 28.5919 22.5 28.5919V31.4044C23.2369 31.4044 23.8706 31.1175 24.3469 30.8362C24.825 30.5512 25.2825 30.1856 25.6594 29.8837L23.8988 27.69Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="benefit__text">No links hurt during the process</div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none">
+                                <path opacity="0.5" d="M22.5 41.25C32.8553 41.25 41.25 32.8553 41.25 22.5C41.25 12.1447 32.8553 3.75 22.5 3.75C12.1447 3.75 3.75 12.1447 3.75 22.5C3.75 32.8553 12.1447 41.25 22.5 41.25Z" stroke="white" stroke-width="3.125"/>
+                                <path d="M16.875 30C18.4688 31.1812 20.4094 31.875 22.5 31.875C24.5906 31.875 26.5312 31.1812 28.125 30" stroke="white" stroke-width="3.125" stroke-linecap="round"/>
+                                <path d="M30 19.6875C30 21.24 29.16 22.5 28.125 22.5C27.09 22.5 26.25 21.24 26.25 19.6875C26.25 18.135 27.09 16.875 28.125 16.875C29.16 16.875 30 18.135 30 19.6875Z" fill="white"/>
+                                <path d="M16.875 22.5C17.9105 22.5 18.75 21.2408 18.75 19.6875C18.75 18.1342 17.9105 16.875 16.875 16.875C15.8395 16.875 15 18.1342 15 19.6875C15 21.2408 15.8395 22.5 16.875 22.5Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="benefit__text">Millions of happy customers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="copyright">
+                <p>Created by <a href="https://github.com/lukaspodmelle/alpaca-generator">@lukaspodmelle &nbsp;<i class="fa-brands fa-github"></i></a></p>
+                <p><a href="https://www.codementor.io/projects/web/alpaca-image-generator-website-ce2oc0eus8">A DevProjects Solution &nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+            </div>
+        </div>
+
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>
